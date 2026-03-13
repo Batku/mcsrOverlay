@@ -1,17 +1,6 @@
-# React + Vite
+# Stream overlay for MCSRranked
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+just add .../<username> in your obs browser source
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# mcsrOverlay
+tracks games from after its opened (also has a back button that you can click to add previous games to the list (max of 50 games)
+<img width="567" height="317" alt="image" src="https://github.com/user-attachments/assets/497ba89c-dcb3-456b-ba76-5ac4e0f88eb8" />
