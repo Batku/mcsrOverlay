@@ -96,10 +96,12 @@ export default function App() {
   };
 
   const getEloColor = (elo) => {
+    if (elo < 600) return "#412ea2";
     if (elo >= 600 && elo < 900) return "#f9f8fe";
-    if (elo >= 900 && elo < 1200) return "#f6c177";
-    if (elo >= 1200 && elo < 1500) return "#9ccfd8";
-    return "#ea9a97";
+    if (elo >= 900 && elo < 1200) return "#f6f477";
+    if (elo >= 1200 && elo < 1500) return "#74cf73";
+    if (elo >= 1500 && elo < 2000) return "#6bdaeb";
+    return "#ec8ae0";
   };
 
   const maxElo = sessionMatches.length > 0 ? Math.max(...sessionMatches.map(m => m.elo)) : 500;
