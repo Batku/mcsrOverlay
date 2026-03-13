@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  background: transparent;
+  font-family: Inter, sans-serif;
+}
+
+.overlay {
+  width: 520px;
+  padding: 18px;
+  border-radius: 12px;
+  background: #232136;
+  color: #e0def4;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  margin-right: 12px;
+}
+
+.elo {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.elo span {
+  color: #f6c177;
+}
+
+.record {
+  font-size: 14px;
+  color: #908caa;
+}
+
+.record span {
+  margin-right: 8px;
+}
+
+.win {
+  color: #9ccfd8;
+}
+
+.loss {
+  color: #eb6f92;
+}
+
+.chart {
+  background: #2a273f;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  background: #2a273f;
+  border: none;
+  color: #e0def4;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  pointer-events: auto;
+}
+
+button:hover {
+  background: #393552;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
