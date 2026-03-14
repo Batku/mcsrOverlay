@@ -23,7 +23,9 @@ export default function App() {
 
       const data = await res.json();
 
-      const parsedRaw = data.data.map((m) => {
+      const parsedRaw = data.data
+        .filter((m) => m.type === 2)
+        .map((m) => {
         const player = m.players.find(
           (p) => p.nickname.toLowerCase() === USERNAME.toLowerCase()
         );
@@ -68,6 +70,9 @@ export default function App() {
 
   const sessionMatches = matches.filter((m) => m.date > startTime);
 
+  const anchorMatch = matches.slice().reverse().find((m) => m.date <= startTime);
+  const chartMatches = (anchorMatch && sessionMatches.length > 0) ? [anchorMatch, ...sessionMatches] : sessionMatches;
+
   const wins = sessionMatches.filter((m) => m.result === "win").length;
   const losses = sessionMatches.filter((m) => m.result === "loss").length;
   const draws = sessionMatches.filter((m) => m.result === "draw").length;
@@ -104,8 +109,8 @@ export default function App() {
     return "#ec8ae0";
   };
 
-  const maxElo = sessionMatches.length > 0 ? Math.max(...sessionMatches.map(m => m.elo)) : 500;
-  const minElo = sessionMatches.length > 0 ? Math.min(...sessionMatches.map(m => m.elo)) : 500;
+  const maxElo = chartMatches.length > 0 ? Math.max(...chartMatches.map(m => m.elo)) : 500;
+  const minElo = chartMatches.length > 0 ? Math.min(...chartMatches.map(m => m.elo)) : 500;
 
   const startTick = Math.floor((minElo - 20) / 20) * 20;
   const endTick = Math.ceil((maxElo + 20) / 20) * 20;
@@ -144,7 +149,7 @@ export default function App() {
 
         <div className="chart">
           <ResponsiveContainer width="100%" height={200}>
-            <LineChart data={sessionMatches}>
+            <LineChart data={chartMatches}>
               <XAxis dataKey="game" hide />
               <YAxis domain={[startTick, endTick]} ticks={ticks} />
               <Tooltip />
